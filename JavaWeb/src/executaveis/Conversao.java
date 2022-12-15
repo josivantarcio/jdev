@@ -16,6 +16,7 @@ import interfaces.PermitirAcesso;
 public class Conversao {
 
 	public static void main(String[] args) {
+		try {
 		HashMap<String, List<Aluno>> maps = new HashMap<>();
 
 		String login = JOptionPane.showInputDialog(null, "Login");
@@ -191,5 +192,8 @@ public class Conversao {
 			System.out.println("Login ou Senha Errado.");
 		}
 		System.out.println("FIM");
+		}catch (NullPointerException e) {
+			System.out.println(e.getStackTrace().getClass());
+		}
 	}
 }
