@@ -10,6 +10,7 @@ public abstract class Pessoa {
 	private String cpf;
 	private String endereco;
 	private Date dataNascimento;
+	private Date dataNascimento2;
 
 	public Date getDataNascimento() {
 		return dataNascimento;
