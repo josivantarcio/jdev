@@ -1,5 +1,6 @@
 package entidades;
 
+import java.util.Date;
 import java.util.Objects;
 
 public abstract class Pessoa {
@@ -8,6 +9,15 @@ public abstract class Pessoa {
 	private int idade;
 	private String cpf;
 	private String endereco;
+	private Date dataNascimento;
+
+	public Date getDataNascimento() {
+		return dataNascimento;
+	}
+
+	public void setDataNascimento(Date dataNascimento) {
+		this.dataNascimento = dataNascimento;
+	}
 
 	public String getEndereco() {
 		return endereco;
