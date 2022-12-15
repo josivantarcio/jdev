@@ -12,6 +12,7 @@ public abstract class Pessoa {
 	private String endereco;
 	private Date dataNascimento;
 	private String rg;
+	private String nomeMae;
 
 	public String getNome() {
 		return nome;
@@ -27,6 +28,14 @@ public abstract class Pessoa {
 
 	public void setSobrenome(String sobrenome) {
 		this.sobrenome = sobrenome;
+	}
+
+	public String getNomeMae() {
+		return nomeMae;
+	}
+
+	public void setNomeMae(String nomeMae) {
+		this.nomeMae = nomeMae;
 	}
 
 	public String getRg() {
@@ -51,14 +60,6 @@ public abstract class Pessoa {
 
 	public void setEndereco(String endereco) {
 		this.endereco = endereco;
-	}
-
-	public String getAluno() {
-		return nome;
-	}
-
-	public void setAluno(String aluno) {
-		this.nome = aluno;
 	}
 
 	public int getIdade() {

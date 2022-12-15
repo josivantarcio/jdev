@@ -36,12 +36,14 @@ public class Conversao {
 			for (int i = 1; i <= 5; i++) {
 
 				String nome = JOptionPane.showInputDialog("Nome do Aluno");
+				String sobrenome = JOptionPane.showInputDialog("Sobrenome do Aluno");
 				String idade = JOptionPane.showInputDialog("Idade do Aluno " + nome);
 				String cpf = JOptionPane.showInputDialog("CPF");
 
 				Aluno aluno1 = new Aluno();
 
-				aluno1.setAluno(nome);
+				aluno1.setNome(nome);
+				aluno1.setSobrenome(sobrenome);
 				aluno1.setCpf(cpf);
 				aluno1.setIdade(Integer.valueOf(idade));
 
@@ -81,7 +83,7 @@ public class Conversao {
 				System.out.println(aluno1);
 				System.out.println("Media: " + aluno1.media());
 				System.out.println(
-						"Situação do Aluno " + aluno1.getAluno() + ": " + (aluno1.situacao() ? StatusAluno.APROVADO
+						"Situação do Aluno " + aluno1.getNome() + ": " + (aluno1.situacao() ? StatusAluno.APROVADO
 								: (aluno1.media() >= 5 ? StatusAluno.RECUPERACAO : StatusAluno.REPROVADO)));
 				System.out.println("---------------------");
 			}
@@ -91,13 +93,13 @@ public class Conversao {
 			String nomeProcurado = JOptionPane.showInputDialog("Digite o nome do aluno procurado");
 
 			for (Aluno aluno : alunos) {
-				if (aluno.getAluno().equalsIgnoreCase(nomeProcurado)) {
+				if (aluno.getNome().equalsIgnoreCase(nomeProcurado)) {
 
 					/* Remover aluno da lista */
 					// alunos.remove(aluno);
 
 					/* Mostrar media do aluno selecionado */
-					System.out.println("Media do Aluno Localizado: " + aluno.getAluno() + " ==> " + aluno.media());
+					System.out.println("Media do Aluno Localizado: " + aluno.getNome() + " ==> " + aluno.media());
 
 				}
 			}
@@ -105,7 +107,7 @@ public class Conversao {
 			/* Mostrar os Alunos Ativos */
 			System.out.println("Restantes...");
 			for (Aluno a : alunos) {
-				System.out.println(a.getAluno());
+				System.out.println(a.getNome());
 			}
 
 			System.out.println("\n******************************");
@@ -117,14 +119,14 @@ public class Conversao {
 			while (desejaAlterar == 0) {
 				String alunoAlterar = JOptionPane.showInputDialog("Nome do Aluno para Alterar?");
 				for (Aluno aluno : alunos) {
-					if (alunoAlterar.equalsIgnoreCase(aluno.getAluno())) {
+					if (alunoAlterar.equalsIgnoreCase(aluno.getNome())) {
 						alunos.remove(aluno);
 						Aluno newAluno = new Aluno();
 						String nome = JOptionPane.showInputDialog("Nome do Aluno");
 						String idade = JOptionPane.showInputDialog("Idade do aluno " + nome);
 						String cpf = JOptionPane.showInputDialog("CPF");
 
-						newAluno.setAluno(nome);
+						newAluno.setNome(nome);
 						newAluno.setIdade(Integer.parseInt(idade));
 						newAluno.setCpf(cpf);
 						alunos.add(newAluno);
@@ -153,7 +155,7 @@ public class Conversao {
 			 */
 			System.out.println("Após Possiveis Alterações...");
 			for (Aluno a : alunos) {
-				System.out.println(a.getAluno());
+				System.out.println(a.getNome());
 			}
 
 			maps.put(StatusAluno.APROVADO, new ArrayList<Aluno>());
