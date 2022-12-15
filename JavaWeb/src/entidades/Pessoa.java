@@ -11,8 +11,14 @@ public abstract class Pessoa {
 	private String endereco;
 	private Date dataNascimento;
 	private String rg;
-	
-	
+
+	public String getRg() {
+		return rg;
+	}
+
+	public void setRg(String rg) {
+		this.rg = rg;
+	}
 
 	public Date getDataNascimento() {
 		return dataNascimento;
