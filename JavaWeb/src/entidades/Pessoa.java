@@ -2,33 +2,45 @@ package entidades;
 
 import java.util.Objects;
 
-public abstract class Pessoa{
-	
+public abstract class Pessoa {
+
 	private String aluno;
 	private int idade;
 	private String cpf;
-	
-	
-	
+	private String endereco;
+
+	public String getEndereco() {
+		return endereco;
+	}
+
+	public void setEndereco(String endereco) {
+		this.endereco = endereco;
+	}
+
 	public String getAluno() {
 		return aluno;
 	}
+
 	public void setAluno(String aluno) {
 		this.aluno = aluno;
 	}
+
 	public int getIdade() {
 		return idade;
 	}
+
 	public void setIdade(int idade) {
 		this.idade = idade;
 	}
+
 	public String getCpf() {
 		return cpf;
 	}
+
 	public void setCpf(String cpf) {
 		this.cpf = cpf;
 	}
-	
+
 	@Override
 	public int hashCode() {
 		return Objects.hash(aluno, cpf, idade);
