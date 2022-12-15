@@ -5,12 +5,29 @@ import java.util.Objects;
 
 public abstract class Pessoa {
 
-	private String aluno;
+	private String nome;
+	private String sobrenome;
 	private int idade;
 	private String cpf;
 	private String endereco;
 	private Date dataNascimento;
 	private String rg;
+
+	public String getNome() {
+		return nome;
+	}
+
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
+
+	public String getSobrenome() {
+		return sobrenome;
+	}
+
+	public void setSobrenome(String sobrenome) {
+		this.sobrenome = sobrenome;
+	}
 
 	public String getRg() {
 		return rg;
@@ -37,11 +54,11 @@ public abstract class Pessoa {
 	}
 
 	public String getAluno() {
-		return aluno;
+		return nome;
 	}
 
 	public void setAluno(String aluno) {
-		this.aluno = aluno;
+		this.nome = aluno;
 	}
 
 	public int getIdade() {
@@ -62,12 +79,12 @@ public abstract class Pessoa {
 
 	@Override
 	public int hashCode() {
-		return Objects.hash(aluno, cpf, idade);
+		return Objects.hash(nome, cpf, idade);
 	}
 
 	@Override
 	public String toString() {
-		return "Pessoa [aluno=" + aluno + ", idade=" + idade + ", cpf=" + cpf + "]";
+		return "Pessoa [aluno=" + nome + ", idade=" + idade + ", cpf=" + cpf + "]";
 	}
 
 }
