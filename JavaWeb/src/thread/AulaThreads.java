@@ -1,39 +1,39 @@
 package thread;
 
-import javax.swing.JOptionPane;
-
 public class AulaThreads {
 
-	public static void main(String[] args) throws InterruptedException {
+	public Runnable threadOne = new Runnable() {
 
-		new Thread() {
-			public void run() {
-				for (int i = 0; i < 10; i++) {
-					System.out.println("Enviando para o Servidor contato do WhatsApp");
-					try {
-						Thread.sleep(1000);
-					} catch (InterruptedException e) {
-						e.printStackTrace();
-					}
+		@Override
+		public void run() {
+			for (int i = 0; i < 10; i++) {
+				System.out.println("Mensagem para o Servidor");
+				try {
+					Thread.sleep(1500);
+				} catch (InterruptedException e) {
+					e.printStackTrace();
 				}
-				System.out.println("FIM");
-			};
-		}.start();
-		
-		new Thread() {
-			public void run() {
-				for (int i = 0; i < 10; i++) {
-					System.out.println("Enviando para o Servidor contato do email");
-					try {
-						Thread.sleep(1000);
-					} catch (InterruptedException e) {
-						e.printStackTrace();
-					}
+			}
+		}
+
+	};
+
+	public Runnable threadTwo = new Runnable() {
+
+		@Override
+		public void run() {
+
+			for (int i = 0; i < 10; i++) {
+				System.out.println("Mensagem para o Servidor de Email");
+				try {
+					Thread.sleep(1000);
+				} catch (Exception e) {
+					e.getMessage();
 				}
-			};
-		}.start();
-		
-		
-		JOptionPane.showMessageDialog(null, "Sistema ainda Rodando");
-	}
+			}
+			System.out.println("FIM");
+		}
+
+	};
+
 }
