@@ -14,6 +14,7 @@ public class EnviandoMensagem {
 		
 		Thread email = new Thread(new AulaThreads().threadTwo);
 		email.start();
+		
 
 		JOptionPane.showMessageDialog(null, "Sistema Continuar Processando. \nFavor Aguarde!");
 
