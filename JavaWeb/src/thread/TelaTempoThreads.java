@@ -17,8 +17,6 @@ public class TelaThreads extends JDialog{
 		
 		
 		
-		
-		
 		setVisible(true); //mostrar todo o conteudo da tela
 	}
 
