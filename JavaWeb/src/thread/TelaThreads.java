@@ -15,7 +15,10 @@ public class TelaThreads extends JDialog {
 	private JTextField caixaTexto1 = new JTextField();
 
 	public TelaThreads() {
-		telaTimes.getSize(new Dimension(450,450));
+		setTitle("Tela com Tempos em Threads");
+		setSize(new Dimension(320, 320));
+		setLocation(null);
+		
 		
 
 		GridBagConstraints grid = new GridBagConstraints();
@@ -24,6 +27,6 @@ public class TelaThreads extends JDialog {
 		
 
 		
-		
+		setVisible(true);
 	}
 }
