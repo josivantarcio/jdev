@@ -20,7 +20,7 @@ public class TelaThreads extends JDialog {
 	
 	public TelaThreads() {
 		setTitle("Minha Tela do Tempo"); // titulo da tela
-		setSize(new Dimension(400, 400)); // tamanho da tela
+		setSize(new Dimension(350, 250)); // tamanho da tela
 		setLocationRelativeTo(null); // centralizar tela
 		setResizable(false); // nao permite a tela ser ajustada de tamanho
 		
@@ -30,26 +30,24 @@ public class TelaThreads extends JDialog {
 		gridBagConstraints.gridx = 0;
 		gridBagConstraints.gridy = 0;
 		
-		jlabel1.setPreferredSize(new Dimension(200, 25));
+		jlabel1.setPreferredSize(new Dimension(150, 25));
 		jpanel.add(jlabel1, gridBagConstraints);
 		
-		jTextoField1.setPreferredSize(new Dimension(200, 25));
-		gridBagConstraints.gridy++;
+		jTextoField1.setPreferredSize(new Dimension(150, 25));
+		gridBagConstraints.gridx++;
 		jpanel.add(jTextoField1, gridBagConstraints);
 		
-		jlabel2.setPreferredSize(new Dimension(200, 25));
+		jlabel2.setPreferredSize(new Dimension(150, 25));
 		gridBagConstraints.gridy++;
+		gridBagConstraints.gridx--;
 		jpanel.add(jlabel2, gridBagConstraints);
 		
-		jTextoField2.setPreferredSize(new Dimension(200, 25));
-		gridBagConstraints.gridy++;
+		jTextoField2.setPreferredSize(new Dimension(150, 25));
+		gridBagConstraints.gridx++;
 		jpanel.add(jTextoField2, gridBagConstraints);
 		
 		
-		add(jpanel, BorderLayout.WEST);
-				
-		
-		
+		add(jpanel, BorderLayout.CENTER);
 		setVisible(true); // mostrar todo o conteudo da tela
 	}
 
