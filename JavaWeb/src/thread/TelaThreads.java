@@ -36,6 +36,7 @@ public class TelaThreads extends JDialog {
 		telaTimes.add(caixaTexto1, grid);
 		
 		texto2.setPreferredSize(new Dimension(100, 25));
+		grid.gridx--;
 		grid.gridy++;
 		telaTimes.add(texto2, grid);
 		
@@ -48,4 +49,22 @@ public class TelaThreads extends JDialog {
 		add(telaTimes);
 		setVisible(true);
 	}
+
+	public JTextField getCaixaTexto1() {
+		return caixaTexto1;
+	}
+
+	public void setCaixaTexto1(JTextField caixaTexto1) {
+		this.caixaTexto1 = caixaTexto1;
+	}
+
+	public JTextField getCaixaTexto2() {
+		return caixaTexto2;
+	}
+
+	public void setCaixaTexto2(JTextField caixaTexto2) {
+		this.caixaTexto2 = caixaTexto2;
+	}
+	
+	
 }
