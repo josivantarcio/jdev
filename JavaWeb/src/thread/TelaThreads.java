@@ -1,54 +1,69 @@
 package thread;
 
-import java.awt.BorderLayout;
 import java.awt.Dimension;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
+import java.awt.Insets;
 
+import javax.swing.JButton;
 import javax.swing.JDialog;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
+import javax.swing.plaf.DimensionUIResource;
 
 public class TelaThreads extends JDialog {
-	private JPanel jpanel = new JPanel(new GridBagLayout());
-	private JLabel jlabel1 = new JLabel("Time Thread 1");
-	private JLabel jlabel2 = new JLabel("Time Thread 2");
-	private JTextField jTextoField1 = new JTextField();
-	private JTextField jTextoField2 = new JTextField();
-	
-	
-	public TelaThreads() {
-		setTitle("Minha Tela do Tempo"); // titulo da tela
-		setSize(new Dimension(350, 250)); // tamanho da tela
-		setLocationRelativeTo(null); // centralizar tela
-		setResizable(false); // nao permite a tela ser ajustada de tamanho
-		
-		
+	private JPanel painel1 = new JPanel(new GridBagLayout());
 
-		GridBagConstraints gridBagConstraints = new GridBagConstraints(); //gerenciador de telas
-		gridBagConstraints.gridx = 0;
-		gridBagConstraints.gridy = 0;
+	private JLabel labelTexto0 = new JLabel("Tempo do Campo 1");
+	private JTextField campoTexto0 = new JTextField();
+
+	private JLabel labelTexto1 = new JLabel("Tempo do Campo 2");
+	private JTextField campoTexto1 = new JTextField();
+	
+	private JButton bSalvar = new JButton("Salvar");
+	private JButton bParar = new JButton("Parar");
+			
+	public TelaThreads()
+	{
+		setTitle("Marcação de Tempo");
+		setSize(new Dimension(300, 200));
+		setLocationRelativeTo(null);
+		setResizable(false);
+
+		GridBagConstraints gridBag = new GridBagConstraints();
+		gridBag.gridx = 0;
+		gridBag.gridy = 0;
+		gridBag.insets = new Insets(5, 5, 5, 5);
 		
-		jlabel1.setPreferredSize(new Dimension(150, 25));
-		jpanel.add(jlabel1, gridBagConstraints);
+		labelTexto0.setPreferredSize(new Dimension(120, 25));
+		painel1.add(labelTexto0, gridBag);
 		
-		jTextoField1.setPreferredSize(new Dimension(150, 25));
-		gridBagConstraints.gridx++;
-		jpanel.add(jTextoField1, gridBagConstraints);
+		campoTexto0.setPreferredSize(new Dimension(120, 25));
+		campoTexto0.setEnabled(false);
+		gridBag.gridx++;
+		painel1.add(campoTexto0, gridBag);
 		
-		jlabel2.setPreferredSize(new Dimension(150, 25));
-		gridBagConstraints.gridy++;
-		gridBagConstraints.gridx--;
-		jpanel.add(jlabel2, gridBagConstraints);
+		gridBag.gridy++;
+		labelTexto1.setPreferredSize(new DimensionUIResource(120, 25));
+		gridBag.gridx--;
+		painel1.add(labelTexto1, gridBag);
 		
-		jTextoField2.setPreferredSize(new Dimension(150, 25));
-		gridBagConstraints.gridx++;
-		jpanel.add(jTextoField2, gridBagConstraints);
+		campoTexto1.setPreferredSize(new Dimension(120, 25));
+		campoTexto1.setEditable(false);
+		gridBag.gridx++;
+		painel1.add(campoTexto1, gridBag);
 		
+		gridBag.gridy++;
+		bSalvar.setPreferredSize(new Dimension(80, 25));
+		gridBag.gridx--;
+		painel1.add(bSalvar, gridBag);
 		
-		add(jpanel, BorderLayout.CENTER);
-		setVisible(true); // mostrar todo o conteudo da tela
+		bParar.setPreferredSize(new Dimension(80, 25));
+		gridBag.gridx++;
+		painel1.add(bParar, gridBag);
+
+		add(painel1);
+		setVisible(true);
 	}
-
 }
