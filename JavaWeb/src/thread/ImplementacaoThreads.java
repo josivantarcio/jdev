@@ -5,25 +5,23 @@ import java.util.concurrent.ConcurrentLinkedQueue;
 
 public class ImplementacaoThreads extends Thread {
 
-	private ConcurrentLinkedQueue<FilaPilha> trabalhoForcado = new ConcurrentLinkedQueue<>();
+	private static ConcurrentLinkedQueue<FilaPilha> concurrentLQ = new ConcurrentLinkedQueue<FilaPilha>();
 
-	public void add(FilaPilha filaPilha) {
-		trabalhoForcado.add(filaPilha);
+	public static void Empilhar(FilaPilha filaPilha) {
+		concurrentLQ.add(filaPilha);
 	}
 
 	@Override
 	public void run() {
-		Iterator iterator = trabalhoForcado.iterator();
-
+		Iterator iterator = concurrentLQ.iterator();
 		synchronized (iterator) {
 
 			while (iterator.hasNext()) {
-				FilaPilha processar = (FilaPilha) iterator.next();
-				
-				
-				System.out.println("-----------------");
-				System.out.println(processar.getEmail());
-				System.out.println(processar.getNome());
+				FilaPilha pilhagem = (FilaPilha) iterator.next();
+
+				System.out.println("---------------------------");
+				System.out.println(pilhagem.getEmail());
+				System.out.println(pilhagem.getNome());
 
 				iterator.remove();
 				try {
@@ -32,11 +30,13 @@ public class ImplementacaoThreads extends Thread {
 					e.printStackTrace();
 				}
 			}
-		}
-		try {
-			Thread.sleep(1000);
-		} catch (InterruptedException e) {
-			e.printStackTrace();
+
+			try {
+				Thread.sleep(1000);
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+			}
+
 		}
 
 	}
