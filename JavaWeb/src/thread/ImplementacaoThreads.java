@@ -5,40 +5,41 @@ import java.util.concurrent.ConcurrentLinkedQueue;
 
 public class ImplementacaoThreads extends Thread {
 
-	private static ConcurrentLinkedQueue<FilaPilha> concurrentLQ = new ConcurrentLinkedQueue<FilaPilha>();
+	private static ConcurrentLinkedQueue<FilaPilha> concurrentLQ = new ConcurrentLinkedQueue<>();
 
 	public static void Empilhar(FilaPilha filaPilha) {
 		concurrentLQ.add(filaPilha);
 	}
+	
+	
 
 	@Override
 	public void run() {
-		Iterator iterator = concurrentLQ.iterator();
-		synchronized (iterator) {
+		System.out.println("Thread Funcionando...");
+		while (true) {
+			Iterator iterator = concurrentLQ.iterator();
+			synchronized (iterator) {
+				while (iterator.hasNext()) {
+					FilaPilha pilhagem = (FilaPilha) iterator.next();
 
-			while (iterator.hasNext()) {
-				FilaPilha pilhagem = (FilaPilha) iterator.next();
+					System.out.println("---------------------------");
+					System.out.println(pilhagem.getEmail());
+					System.out.println(pilhagem.getNome());
 
-				System.out.println("---------------------------");
-				System.out.println(pilhagem.getEmail());
-				System.out.println(pilhagem.getNome());
+					iterator.remove();
+					try {
+						Thread.sleep(1000);
+					} catch (InterruptedException e) {
+						e.printStackTrace();
+					}
+				}
 
-				iterator.remove();
 				try {
-					Thread.sleep(100);
+					Thread.sleep(1000);
 				} catch (InterruptedException e) {
 					e.printStackTrace();
 				}
 			}
-
-			try {
-				Thread.sleep(1000);
-			} catch (InterruptedException e) {
-				e.printStackTrace();
-			}
-
 		}
-
 	}
-
 }
