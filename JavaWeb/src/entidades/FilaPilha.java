@@ -1,4 +1,4 @@
-package thread;
+package entidades;
 
 import java.util.Objects;
 

@@ -1,4 +1,4 @@
-package thread;
+package telas;
 
 import java.awt.Dimension;
 import java.awt.GridBagConstraints;

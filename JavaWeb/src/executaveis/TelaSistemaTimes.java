@@ -1,6 +1,6 @@
 package executaveis;
 
-import thread.TelaThreads;
+import telas.TelaThreads;
 
 public class TelaSistemaTimes {
 

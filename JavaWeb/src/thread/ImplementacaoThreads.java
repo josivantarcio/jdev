@@ -3,6 +3,8 @@ package thread;
 import java.util.Iterator;
 import java.util.concurrent.ConcurrentLinkedQueue;
 
+import entidades.FilaPilha;
+
 public class ImplementacaoThreads extends Thread {
 
 	private ConcurrentLinkedQueue<FilaPilha> trabalhoForcado = new ConcurrentLinkedQueue<>();
