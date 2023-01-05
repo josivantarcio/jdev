@@ -1,6 +1,5 @@
 package datas;
 
-import java.text.Format;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -9,21 +8,24 @@ import java.util.Date;
 public class ComparandoDatas {
 
 	public static void main(String[] args) throws ParseException, InterruptedException {
-		SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy hh:mm.ss");
-		
-		Date dataAniversario = sdf.parse("04/01/2023 03:25.30");
-		System.out.println(dataAniversario);
-		
-		int i = 1;
-		boolean stop = true;
-		while(stop) {
-			Date dataAtual = sdf.parse(sdf.format(Calendar.getInstance().getTime()));
-			System.out.println(i++);
-			if(dataAniversario.equals(dataAtual)) {
-				stop = false;
+		SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy hh:mm");
+
+		Date dataFinal = sdf.parse("05/01/2023 03:35");
+		System.out.println(sdf.format(dataFinal));
+
+		while (true) {
+			Date dataAtual = Calendar.getInstance().getTime();
+			System.out.println(sdf.format(dataAtual));
+			
+			if(dataAtual.equals(dataFinal)) {
+				break;
 			}
-			System.out.println(dataAtual);
-			Thread.sleep(1000);
+
+			try {
+				Thread.sleep(1000);
+			} catch (InterruptedException e) {
+				e.getMessage();
+			}
 			
 		}
 		System.out.println("Fim");
