@@ -8,17 +8,21 @@ import java.util.Date;
 public class ComparandoDatas {
 
 	public static void main(String[] args) throws ParseException, InterruptedException {
-		SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy hh:mm");
 
-		Date dataFinal = sdf.parse("05/01/2023 03:35");
+		SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy hh:mm:ss");
+
+		Date dataFinal = sdf.parse("05/01/2023 04:05:40");
 		System.out.println(sdf.format(dataFinal));
 
-		while (true) {
-			Date dataAtual = Calendar.getInstance().getTime();
+		Date dataAtual = null;
+
+		Boolean iniciar = true;
+		while (iniciar) {
+			dataAtual = Calendar.getInstance().getTime();
 			System.out.println(sdf.format(dataAtual));
-			
-			if(dataAtual.equals(dataFinal)) {
-				break;
+
+			if (dataFinal.after(dataAtual)) {
+				iniciar = false;
 			}
 
 			try {
@@ -26,7 +30,7 @@ public class ComparandoDatas {
 			} catch (InterruptedException e) {
 				e.getMessage();
 			}
-			
+
 		}
 		System.out.println("Fim");
 	}
