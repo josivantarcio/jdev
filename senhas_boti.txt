@@ -1,4 +1,3 @@
-https://auth.grupoboticario.com.br
 nataliak03@e-boticario.com.br 123456
 laurar03@e-boticario.com.br boti0210
 mariar12@e-boticario.com.br 12345678
@@ -22,3 +21,5 @@ ecilene02@e-boticario.com.br 25659392806
 laurar03@e-boticario.com.br boti0210
 ceciliac01@e-boticario.com.br boti0208
 nathaliaa13@e-boticario.com.br boti2201
+
+https://auth.grupoboticario.com.br

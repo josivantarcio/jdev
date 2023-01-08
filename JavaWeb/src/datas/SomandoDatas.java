@@ -11,6 +11,7 @@ public class SomandoDatas {
 	public static void main(String[] args) throws ParseException {
 		SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
 		Calendar cal = Calendar.getInstance();
+		System.out.println(cal);
 
 		System.out.println("Data do Sistema: " + sdf.format(cal.getTime()));
 
